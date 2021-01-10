@@ -2,6 +2,7 @@
 
 ## Introduction
 -A RESTful CRUD API for writing quotes and giving them your own color using NodeJS, Express and PostgreSQL.
+
 -Live demo [here](https://khoiquotemaker.herokuapp.com/).
 
 ### Instructions:
