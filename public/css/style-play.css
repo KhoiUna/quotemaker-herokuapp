@@ -1,0 +1,90 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+/* Style .head-container */
+.head-container {
+  background-color: black;
+  display: grid;
+  width: 100%;
+  grid-template-columns: 1fr 1fr;
+  padding: 2%;
+}
+.head-container #title {
+  text-align: left;
+  font-size: x-large;
+  font-weight: bold;
+  color: white;
+}
+.head-container #title a {
+  color: white;
+  text-decoration: none;
+}
+.head-container #link {
+  position: relative;
+  text-align: right;
+  grid-row: 0 / 1;
+  font-size: medium;
+  right: 10%;
+  padding-top: 2.5px;
+}
+.head-container #link a {
+  color: white;
+}
+
+/* Style play-form */
+.play-form {
+  text-align: center;
+}
+.play-form #form-title {
+  font-weight: bold;
+  font-size: xx-large;
+  padding: 10%;
+  border-bottom: 5px dashed red;
+}
+.play-form #quote-display {
+  font-weight: bold;
+  font-size: xx-large;
+  font-style: italic;
+  color: #00ffff;
+  background-color: #b700ff;
+  margin-top: 12%;
+  margin-left: 3%;
+  margin-right: 3%;
+  border: 5px solid black;
+}
+.play-form label {
+  font-weight: bold;
+  padding-top: 5%;
+}
+.play-form textarea {
+  margin: 2%;
+  padding: 0.5%;
+}
+.play-form input {
+  margin: 2%;
+  padding: 0.5%;
+}
+.play-form button {
+  margin-top: 5%;
+  border: 3px solid black;
+  background-color: white;
+  cursor: pointer;
+  padding: 1%;
+  margin: 3%;
+}
+.play-form button p {
+  font-weight: bold;
+}
+
+/* Style footer */
+footer {
+  text-align: center;
+  font-weight: bold;
+  padding: 5%;
+  text-decoration: underline;
+}
+footer a {
+  color: black;
+}

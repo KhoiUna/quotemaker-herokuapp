@@ -1,0 +1,99 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+/* Style .head-container */
+.head-container {
+  background-color: black;
+  display: grid;
+  width: 100%;
+  grid-template-columns: 1fr 1fr;
+  padding: 2%;
+}
+.head-container #title {
+  text-align: left;
+  font-size: x-large;
+  font-weight: bold;
+  color: white;
+}
+.head-container #title a {
+  color: white;
+  text-decoration: none;
+}
+.head-container #link {
+  position: relative;
+  text-align: right;
+  grid-row: 0 / 1;
+  font-size: medium;
+  right: 10%;
+  padding-top: 2.5px;
+}
+.head-container #link a {
+  color: white;
+}
+
+/* Style main-screen */
+.main-screen {
+  text-align: center;
+}
+.main-screen #title {
+  font-weight: bold;
+  font-size: xx-large;
+  padding: 10%;
+}
+.main-screen #add {
+  padding: 1%;
+  cursor: pointer;
+  margin-left: 3%;
+  background-color: rgb(214, 213, 213);
+}
+
+/* Style quote-list */
+ol {
+  margin-left: 5%;
+  margin-right: 5%;
+}
+.quote-list {
+  padding: 3% 5%;
+  font-weight: bold;
+  font-size: large;
+}
+.quote-list .list-item {
+  border: 3px solid black;
+  border-radius: 10px;
+  margin-top: 3%;
+  padding-left: 3%;
+}
+.quote-list #update,
+.quote-list #delete {
+  padding: 1%;
+  margin: 5%;
+  cursor: pointer;
+  border-radius: 10px;
+  font-weight: bold;
+}
+.quote-list #update:hover,
+.quote-list #delete:hover {
+  box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24),
+    0 17px 50px 0 rgba(0, 0, 0, 0.19);
+}
+.quote-list #update {
+  color: black;
+  background-color: rgb(47, 255, 57);
+}
+.quote-list #delete {
+  color: white;
+  background-color: red;
+}
+
+/* Style footer */
+footer {
+  text-align: center;
+  font-weight: bold;
+  padding: 5%;
+  text-decoration: underline;
+}
+footer a {
+  color: black;
+}

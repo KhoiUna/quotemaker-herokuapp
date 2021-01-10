@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+      integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="/css/style-register.css" />
+    <link rel="icon" href="/img/favicon.ico" />
+    <title>Register</title>
+  </head>
+  <body>
+    <div class="container-flex">
+      <div class="head-container">
+        <head>
+          <p id="title">
+            <a href="/">QUOTE_MAKER</a>
+          </p>
+          <p id="link">
+            <a href="/api/login">Login</a>
+            <span style="color: white; font-weight: bold">|</span>
+            <a href="/api/register">Register</a>
+          </p>
+        </head>
+      </div>
+
+      <div class="register-form">
+        <p id="form-title">REGISTER</p>
+        <main>
+          <form action="/api/register/check" method="POST">
+            <label for="username">Username:</label>
+            <input
+              type="text"
+              name="username"
+              id="username"
+              placeholder="eg: JohnDoe"
+              required
+              style="margin-left: 12%"
+            /><br />
+
+            <p
+              id="warn-username-ejs"
+              style="font-style: italic; font-weight: bold; color: red"
+            >
+              <%= usernameInvalid %>
+            </p>
+            <p
+              id="warn-username"
+              style="font-style: italic; font-weight: bold; color: red"
+            ></p>
+
+            <label for="password">Password:</label>
+            <input
+              type="password"
+              name="password"
+              id="password"
+              placeholder="eg: John4582@!"
+              required
+              style="margin-left: 12%"
+            />
+            <p
+              id="togglePassword"
+              style="
+                display: inline;
+                text-decoration: underline;
+                cursor: pointer;
+                font-weight: bold;
+                color: blueviolet;
+              "
+            >
+              Show
+            </p>
+
+            <p
+              id="warn-password"
+              style="font-weight: bold; color: red; font-style: italic"
+            ></p>
+
+            <label for="confirmPass">Confirm password:</label>
+            <input
+              type="password"
+              name="confirmPass"
+              id="confirmPass"
+              placeholder="eg: John4582@!"
+              required
+            />
+            <p
+              id="toggleConfirmPassword"
+              style="
+                display: inline;
+                text-decoration: underline;
+                cursor: pointer;
+                font-weight: bold;
+                color: blueviolet;
+              "
+            >
+              Show
+            </p>
+
+            <p
+              id="warn-confirmPass"
+              style="font-style: italic; font-weight: bold; color: red"
+            ></p>
+
+            <p
+              id="register-success"
+              style="
+                font-weight: bold;
+                font-style: italic;
+                padding-top: 3%;
+                color: rgba(26, 223, 92, 0.973);
+              "
+            >
+              <%= success %>
+            </p>
+
+            <button type="submit" id="register" disabled>
+              <p style="color: silver">SUBMIT</p>
+            </button>
+          </form>
+
+          <p id="sign-in">
+            <a href="/api/login">Already have an account? Sign in</a>
+          </p>
+        </main>
+      </div>
+
+      <footer>
+        <p>
+          <a href="https://rebrand.ly/codebros" target="_blank"
+            >&copy; A product of Khoi Nguyen</a
+          >
+        </p>
+      </footer>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="/js/script-checkRegister.js"></script>
+  </body>
+</html>

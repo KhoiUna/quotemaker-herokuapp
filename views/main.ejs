@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="/img/favicon.ico" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+      integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="/css/style-main.css" />
+    <title>Your Quote</title>
+  </head>
+  <body>
+    <div class="container-flex">
+      <div class="head-container">
+        <head>
+          <p id="title" style="cursor: pointer">QUOTE_MAKER</p>
+          <p id="link">
+            <a href="/api/logout">Log Out</a>
+          </p>
+        </head>
+      </div>
+
+      <div class="main-screen">
+        <p id="title">
+          WELCOME
+          <span
+            id="username"
+            style="font-weight: bold; font-style: italic; padding-right: 3%"
+            ><%= username.toUpperCase() %></span
+          >!
+        </p>
+
+        <p style="text-align: left; margin-left: 3%; font-weight: bold">
+          Create New Quote here:
+          <a href="/api/play"
+            ><button type="button" id="add">+ Add new quote</button></a
+          >
+        </p>
+      </div>
+
+      <ol class="quote-list">
+        <% quoteList %> <%for(let i = 0; i < quoteList.length; i++) { %>
+        <li>
+          <p
+            class="list-item"
+            style="
+              color: <%= quoteList[i].color %>;
+              background-color: <%= quoteList[i].background %>;
+            "
+          >
+            <span style="font-weight: bold"><%= quoteList[i].quote %></span>
+            <a href="/api/play/update/<%= quoteList[i].quote_id %>"
+              ><button id="update">UPDATE</button></a
+            >
+            <a href="/api/play/delete/<%= quoteList[i].quote_id %>"
+              ><button id="delete">DELETE</button></a
+            >
+          </p>
+        </li>
+        <% }; %>
+      </ol>
+
+      <footer>
+        <p>
+          <a href="https://rebrand.ly/codebros" target="_blank"
+            >&copy; A product of Khoi Nguyen</a
+          >
+        </p>
+        <p id="show"></p>
+      </footer>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="/js/script-main.js"></script>
+  </body>
+</html>

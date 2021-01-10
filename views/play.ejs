@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="/img/favicon.ico" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+      integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="/css/style-play.css" />
+    <title>Make Your Quote</title>
+  </head>
+  <body>
+    <div class="container-flex">
+      <div class="head-container">
+        <head>
+          <p id="title" style="cursor: pointer;">
+            <a href="/api/main">QUOTE_MAKER</a>
+          </p>
+          <p id="link">
+            <a href="/api/main">Go Back</a>
+          </p>
+        </head>
+      </div>
+
+      <div class="play-form">
+        <p id="form-title">
+          CREATE YOUR QUOTE BELOW
+        </p>
+        <p id="quote-display">" Think different "</p>
+
+        <form action="/api/play/save" method="POST" style="padding-top: 5%;">
+          <label for="quote">Type your quote:</label>
+          <textarea
+            type="text"
+            name="quote"
+            id="quote"
+            placeholder="Eg: Think different"
+            rows="2"
+            cols="40"
+          ></textarea
+          ><br />
+
+          <label for="color">Pick your text color:</label>
+          <input type="color" name="color" id="color" value="#00ffff" /><br />
+
+          <label for="bgcolor">Pick your background color:</label>
+          <input
+            type="color"
+            name="bgcolor"
+            id="bgcolor"
+            value="#b700ff"
+          /><br />
+
+          <button type="submit" id="save"><p>SAVE</p></button>
+        </form>
+      </div>
+
+      <footer>
+        <p>
+          <a href="https://rebrand.ly/codebros" target="_blank"
+            >&copy; A product of Khoi Nguyen</a
+          >
+        </p>
+      </footer>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="/js/script-play.js"></script>
+    <script src="/js/script.js"></script>
+  </body>
+</html>
