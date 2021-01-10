@@ -11,8 +11,8 @@ const {
   PORT = 3000,
   NODE_ENV = "development",
   SESS_LIFETIME = TWO_HOURS,
-  SESS_NAME = "session_id",
-  SESS_SECRET = "itissecret",
+  SESS_NAME,
+  SESS_SECRET,
 } = process.env;
 const IN_PROD = NODE_ENV === "production";
 
@@ -20,6 +20,7 @@ const IN_PROD = NODE_ENV === "production";
 app.use(morgan("dev"));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.set("view engine", "ejs");
+app.set("trust proxy", 1);
 app.use(
   session({
     name: SESS_NAME,
