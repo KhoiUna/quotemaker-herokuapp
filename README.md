@@ -8,5 +8,6 @@
 ### Instructions:
 1. `git clone https://github.com/KhoiUna/quotemaker-herokuapp.git`
 2. `npm i`
-3. `touch .env` then ddd your own environment variables to it
-4. `npm start`
+3. Run `users.sql` and `quotes.sql` in your Postgres database to create 2 tables
+4. `touch .env` then add your own environment variables to it
+5. `npm start`
