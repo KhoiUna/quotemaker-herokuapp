@@ -6,9 +6,9 @@ const redirectLogin = require("../middlewares/redirectLogin");
 //Render main.ejs
 router.get("/", redirectLogin, async (req, res) => {
   console.log("Render main.ejs!");
-  const quoteList = await getQuoteList(pool, req.session.user.userId);
+  const quoteList = await getQuoteList(pool, req.user.user_id);
   res.render("main.ejs", {
-    username: req.session.user.username,
+    username: req.user.username,
     quoteList: quoteList,
     color: null,
   });

@@ -20,15 +20,18 @@ module.exports = {
   async renderQuoteForUpdate(pool, quoteId, res) {
     const client = await pool.connect();
     try {
+      console.log("rendering quotes for updating");
       const results = await client.query(
         "SELECT quote, color, background FROM quotes WHERE quote_id = $1",
         [quoteId]
       );
+      const { quote, color, background } = results.rows[0];
+      console.log(quote, color, background);
       res.render("play-update.ejs", {
         quoteId: quoteId,
-        quote: results.rows[0].quote,
-        color: results.rows[0].color,
-        bgcolor: results.rows[0].background,
+        quote,
+        color,
+        bgcolor: background,
       });
     } catch (err) {
       console.log("Error rendering quotes for updating");

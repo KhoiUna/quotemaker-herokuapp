@@ -3,6 +3,7 @@ const morgan = require("morgan");
 const express = require("express");
 const session = require("express-session");
 const bodyParser = require("body-parser");
+const passport = require("passport");
 const app = express();
 
 //env variables
@@ -34,6 +35,8 @@ app.use(
     },
   })
 );
+app.use(passport.initialize());
+app.use(passport.session());
 app.use(express.static("public"));
 app.get("/", (req, res) => {
   res.render("index.ejs");
@@ -59,6 +62,14 @@ app.use("/api/main", mainRouter);
 //Play route
 const playRouter = require("./routes/play-router");
 app.use("/api/play", playRouter);
+
+//Update route
+const updateRouter = require("./routes/update-router");
+app.use("/api/play/update", updateRouter);
+
+//Delete route
+const deleteRouter = require("./routes/delete-router");
+app.use("/api/play/delete", deleteRouter);
 
 //Start a server
 app.listen(PORT, () => {
