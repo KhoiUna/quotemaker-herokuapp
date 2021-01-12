@@ -1,79 +1,79 @@
 * {
-  padding: 0;
-  margin: 0;
+    padding: 0;
+    margin: 0;
 }
+
 
 /* Style .head-container */
+
 .head-container {
-  background-color: black;
-  display: grid;
-  width: 100%;
-  grid-template-columns: 1fr 1fr;
-  padding: 2%;
+    background-color: black;
+    display: grid;
+    width: 100%;
+    grid-template-columns: 1fr 1fr;
+    padding: 2%;
 }
+
 .head-container #title {
-  text-align: left;
-  font-size: x-large;
-  font-weight: bold;
-  color: white;
+    text-align: left;
+    font-size: x-large;
+    font-weight: bold;
+    color: white;
 }
+
 .head-container #title a {
-  color: white;
-  text-decoration: none;
+    color: white;
+    text-decoration: none;
 }
+
 .head-container #link {
-  position: relative;
-  text-align: right;
-  grid-row: 0 / 1;
-  font-size: medium;
-  right: 10%;
-  padding-top: 2.5px;
+    position: relative;
+    text-align: right;
+    font-size: medium;
+    right: 10%;
 }
+
 .head-container #link a {
-  color: white;
+    color: white;
 }
+
 
 /* Style register-form */
-.register-form {
-  padding-top: 20%;
-  text-align: center;
-}
+
 .register-form #form-title {
-  font-weight: bold;
-  font-size: xx-large;
-  padding: 5%;
-}
-.register-form label {
-  font-weight: bold;
-}
-.register-form input {
-  margin: 2%;
-  padding: 0.5%;
-}
-.register-form button {
-  margin-top: 8%;
-  border: 3px solid black;
-  background-color: white;
-  cursor: pointer;
-  padding: 1%;
-}
-.register-form button p {
-  font-weight: bold;
-}
-.register-form #sign-in {
-  padding-top: 3%;
-  font-style: italic;
-  font-weight: bold;
-  text-decoration: underline;
+    font-weight: bold;
+    font-size: xx-large;
 }
 
-/* Style footer */
-footer {
-  text-align: center;
-  font-weight: bold;
-  padding: 5%;
-  text-decoration: underline;
+.register-form label {
+    font-weight: bold;
 }
+
+.register-form button {
+    border: 3px solid black;
+    background-color: white;
+    cursor: pointer;
+}
+
+.register-form button p {
+    font-weight: bold;
+}
+
+.register-form #sign-in {
+    font-style: italic;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+
+/* Style footer */
+
+footer {
+    text-align: center;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
 footer a {
-  color: black;
+    color: black;
 }
