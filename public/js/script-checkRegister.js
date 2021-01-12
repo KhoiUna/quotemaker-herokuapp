@@ -193,18 +193,18 @@ const toggle = (id) => {
 $(function () {
   $("#username").keyup(() => {
     document.getElementById("register-success").innerHTML = null;
-    document.getElementById("warn-username-ejs").innerHTML = null;
+    document.getElementById("warn-username").innerHTML = null;
     checkUsername(event);
   });
   $("#password").keyup(() => {
     document.getElementById("register-success").innerHTML = null;
-    document.getElementById("warn-username-ejs").innerHTML = null;
+    document.getElementById("warn-username").innerHTML = null;
     checkPassword(event);
     checkConfirmPassword(event);
   });
   $("#confirmPass").keyup(() => {
     document.getElementById("register-success").innerHTML = null;
-    document.getElementById("warn-username-ejs").innerHTML = null;
+    document.getElementById("warn-username").innerHTML = null;
     checkConfirmPassword(event);
   });
   $("#togglePassword").click(() => {
