@@ -40,17 +40,15 @@
 .login-form #form-title {
   font-weight: bold;
   font-size: xx-large;
-  padding: 5%;
+  padding-top: 3%;
 }
 .login-form label {
   font-weight: bold;
 }
 .login-form input {
   margin: 2%;
-  padding: 0.5%;
 }
 .login-form button {
-  margin-top: 8%;
   border: 3px solid black;
   background-color: white;
   cursor: pointer;
@@ -58,19 +56,21 @@
 }
 .login-form button p {
   font-weight: bold;
+  margin-bottom: 0;
 }
 .login-form #sign-up {
-  padding-top: 3%;
+  padding-top: 1%;
   font-style: italic;
   font-weight: bold;
   text-decoration: underline;
+  font-size: larger;
 }
 
 /* Style footer */
 footer {
   text-align: center;
   font-weight: bold;
-  padding: 5%;
+  padding-top: 3%;
   text-decoration: underline;
 }
 footer a {

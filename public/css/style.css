@@ -38,7 +38,7 @@
   padding: 5% 3% 5% 3%;
   text-align: center;
   background-color: azure;
-  margin-top: 35%;
+  margin-top: 3%;
   margin-left: 4%;
   background-image: url("../img/background.png");
   background-size: cover;
@@ -69,7 +69,6 @@
 footer {
   text-align: center;
   font-weight: bold;
-  padding: 5%;
   text-decoration: underline;
 }
 footer a {

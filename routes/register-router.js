@@ -13,7 +13,11 @@ router.get("/", redirectMain, (req, res) => {
 });
 
 router.post("/check", redirectMain, async (req, res) => {
-  const user = { username: req.body.username, password: req.body.password };
+  const user = {
+    username: req.body.username,
+    email: req.body.email,
+    password: req.body.password,
+  };
   res.render("register.ejs", await registerUser(pool, user));
 });
 

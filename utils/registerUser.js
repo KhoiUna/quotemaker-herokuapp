@@ -16,8 +16,8 @@ const registerUser = async (pool, user) => {
       };
     } else {
       await client.query(
-        "INSERT INTO users(username, password) VALUES($1, $2)",
-        [user.username, await hashPassword(user.password)]
+        "INSERT INTO users(username, email, password) VALUES($1, $2, $3)",
+        [user.username, user.email, await hashPassword(user.password)]
       );
       return {
         usernameInvalid: null,
