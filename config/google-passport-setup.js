@@ -5,7 +5,6 @@ const registerUser = require("../utils/registerUser");
 const pool = require("../db/pool");
 
 passport.use(
-  "google",
   new GoogleStrategy(
     {
       clientID: process.env.CLIENT_ID,
