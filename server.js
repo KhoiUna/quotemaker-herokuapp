@@ -5,6 +5,8 @@ const session = require("express-session");
 const bodyParser = require("body-parser");
 const passport = require("passport");
 const app = express();
+const googlePassportSetup = require("./config/google-passport-setup");
+const localPassportSetup = require("./config/local-passport-setup");
 
 //env variables
 const TWO_HOURS = 1000 * 3600 * 2;
@@ -40,6 +42,15 @@ app.use(passport.session());
 app.use(express.static("public"));
 app.get("/", (req, res) => {
   res.render("index.ejs");
+});
+
+// Configure Passport authenticated session persistence
+passport.serializeUser((user, done) => {
+  const { user_id, username, avatar } = user;
+  done(null, { user_id, username, avatar });
+});
+passport.deserializeUser(async (userObj, done) => {
+  return done(null, userObj);
 });
 
 //Routes:

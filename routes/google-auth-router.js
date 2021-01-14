@@ -1,6 +1,5 @@
 const router = require("express").Router();
 const passport = require("passport");
-const googlePassportSetup = require("../config/google-passport-setup");
 const redirectMain = require("../middlewares/redirectMain");
 
 router.get(

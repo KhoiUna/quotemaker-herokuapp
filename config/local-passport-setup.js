@@ -3,7 +3,6 @@ const LocalStrategy = require("passport-local");
 const GetUser = require("../utils/GetUser");
 const comparePassword = require("../helpers/comparePassword");
 const pool = require("../db/pool");
-const { use } = require("passport");
 
 // Configure the local strategy for use by Passport
 passport.use(
@@ -27,12 +26,3 @@ passport.use(
     }
   )
 );
-
-// Configure Passport authenticated session persistence
-passport.serializeUser((user, done) => {
-  const { user_id, username, avatar } = user;
-  done(null, { user_id, username, avatar });
-});
-passport.deserializeUser(async (userObj, done) => {
-  return done(null, userObj);
-});
