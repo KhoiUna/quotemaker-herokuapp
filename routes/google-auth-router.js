@@ -14,7 +14,10 @@ router.get(
   passport.authenticate("google", {
     failureRedirect: "/api/login",
     successRedirect: "/api/main",
-  })
+  }),
+  (req, res) => {
+    res.redirect("/api/main");
+  }
 );
 
 module.exports = router;
