@@ -1,9 +1,11 @@
 const router = require("express").Router();
 const passport = require("passport");
 const googlePassportSetup = require("../config/google-passport-setup");
+const redirectMain = require("../middlewares/redirectMain");
 
 router.get(
   "/google",
+  redirectMain,
   passport.authenticate("google", {
     scope: ["profile", "email"],
   })
@@ -11,6 +13,7 @@ router.get(
 
 router.get(
   "/google/redirect",
+  redirectMain,
   passport.authenticate("google", {
     failureRedirect: "/api/login",
   }),

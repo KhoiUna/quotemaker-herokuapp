@@ -9,7 +9,8 @@ passport.use(
     {
       clientID: process.env.CLIENT_ID,
       clientSecret: process.env.CLIENT_SECRET,
-      callbackURL: "https://khoiquotemaker.herokuapp.com/auth/google/redirect",
+      callbackURL: "http://localhost:3000/auth/google/redirect",
+      // callbackURL: "https://khoiquotemaker.herokuapp.com/auth/google/redirect",
     },
     async (accessToken, refreshToken, userData, done) => {
       const user = await GetUser.byEmail(pool, userData.email);

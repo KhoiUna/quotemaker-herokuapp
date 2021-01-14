@@ -75,6 +75,13 @@ app.use("/api/play/update", updateRouter);
 const deleteRouter = require("./routes/delete-router");
 app.use("/api/play/delete", deleteRouter);
 
+//Error handling route
+app.use((err, req, res, next) => {
+  const status = err.status || 500;
+  res.status(status).send("error !!!");
+  next();
+});
+
 //Start a server
 app.listen(PORT, () => {
   console.log(`Listening on http://localhost:${PORT}`);
