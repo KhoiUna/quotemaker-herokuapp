@@ -11,10 +11,10 @@ router.get(
 
 router.get(
   "/google/redirect",
-  passport.authenticate("google", { failureRedirect: "/api/login" }),
-  (req, res) => {
-    res.redirect("/api/main");
-  }
+  passport.authenticate("google", {
+    failureRedirect: "/api/login",
+    successRedirect: "/api/main",
+  })
 );
 
 module.exports = router;
