@@ -3,6 +3,6 @@ CREATE TABLE quotes (
  quote TEXT,
  color character(255),
  background character(255),
- user_id INT,
+ user_id INT NOT NULL,
  FOREIGN KEY(user_id) REFERENCES users(user_id)
 );

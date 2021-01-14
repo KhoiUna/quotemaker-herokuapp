@@ -12,13 +12,13 @@ router.get("/", redirectMain, (req, res) => {
   });
 });
 
-router.post("/check", redirectMain, async (req, res) => {
+router.post("/", redirectMain, async (req, res) => {
   const user = {
     username: req.body.username,
     email: req.body.email,
     password: req.body.password,
   };
-  res.render("register.ejs", await registerUser(pool, user));
+  res.render("register", await registerUser(pool, user));
 });
 
 module.exports = router;

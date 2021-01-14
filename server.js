@@ -52,8 +52,8 @@ const loginRouter = require("./routes/login-router");
 app.use("/api/login", loginRouter);
 
 //Google auth route
-// const googleAuthRouter = require("./routes/google-auth-router");
-// app.use("/auth", googleAuthRouter);
+const googleAuthRouter = require("./routes/google-auth-router");
+app.use("/auth", googleAuthRouter);
 
 //Logout route
 const logoutRouter = require("./routes/logout-router");
