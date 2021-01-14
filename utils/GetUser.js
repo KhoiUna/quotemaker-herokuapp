@@ -3,7 +3,7 @@ module.exports = {
     const client = await pool.connect();
     try {
       const userIdAndPassword = await client.query(
-        "SELECT user_id, username, password from users WHERE email = $1",
+        "SELECT user_id, username, avatar, password from users WHERE email = $1",
         [email]
       );
       return userIdAndPassword.rows[0];

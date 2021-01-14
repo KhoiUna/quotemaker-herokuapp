@@ -30,8 +30,9 @@ passport.use(
 
 // Configure Passport authenticated session persistence
 passport.serializeUser((user, done) => {
-  done(null, user);
+  const { user_id, username, avatar } = user;
+  done(null, { user_id, username, avatar });
 });
-passport.deserializeUser(async (user, done) => {
-  return done(null, user);
+passport.deserializeUser(async (userObj, done) => {
+  return done(null, userObj);
 });
