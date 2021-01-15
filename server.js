@@ -86,13 +86,13 @@ app.use("/api/play/update", updateRouter);
 const deleteRouter = require("./routes/delete-router");
 app.use("/api/play/delete", deleteRouter);
 
-//Error handling route
-app.use((err, req, res) => {
-  if (err) throw err;
+//Error handling middlewares
+app.use((req, res, next) => {
+  res.status(404).render("error", { errorCode: 404 });
 });
 app.use((err, req, res, next) => {
   const status = err.statusCode || 500;
-  res.status(404).render("error", { errorCode: 404 });
+  res.status(status).render("error", { errorCode: status });
   next();
 });
 
