@@ -92,7 +92,7 @@ app.use((err, req, res) => {
 });
 app.use((err, req, res, next) => {
   const status = err.statusCode || 500;
-  res.status(status).render("error", { errorCode: status });
+  res.status(404).render("error", { errorCode: 404 });
   next();
 });
 
