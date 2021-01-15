@@ -87,9 +87,12 @@ const deleteRouter = require("./routes/delete-router");
 app.use("/api/play/delete", deleteRouter);
 
 //Error handling route
+app.use((err, req, res) => {
+  if (err) throw err;
+});
 app.use((err, req, res, next) => {
-  const status = err.status || 500;
-  res.status(status).send("error !!!");
+  const status = err.statusCode || 500;
+  res.status(status).render("error", { errorCode: status });
   next();
 });
 
