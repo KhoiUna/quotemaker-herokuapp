@@ -86,6 +86,10 @@ app.use("/api/play/update", updateRouter);
 const deleteRouter = require("./routes/delete-router");
 app.use("/api/play/delete", deleteRouter);
 
+//Profile route
+const profileRouter = require("./routes/profile-router");
+app.use("/api/profile", profileRouter);
+
 //Error handling middlewares
 app.use((req, res, next) => {
   res.status(404).render("error", { errorCode: 404 });
