@@ -40,7 +40,7 @@
 .main-screen #title {
   font-weight: bold;
   font-size: xx-large;
-  padding: 10%;
+  padding: 2%;
 }
 .main-screen #add {
   padding: 1%;
@@ -91,7 +91,6 @@ ol {
 footer {
   text-align: center;
   font-weight: bold;
-  padding: 5%;
   text-decoration: underline;
 }
 footer a {

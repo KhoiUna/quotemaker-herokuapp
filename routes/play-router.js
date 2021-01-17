@@ -5,8 +5,7 @@ const redirectLogin = require("../middlewares/redirectLogin");
 
 //Render play.ejs
 router.get("/", redirectLogin, (req, res, next) => {
-  res.render("play.ejs");
-  next();
+  res.render("play");
 });
 
 router.post("/save", redirectLogin, (req, res) => {
