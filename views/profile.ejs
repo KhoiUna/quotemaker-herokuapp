@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="/img/favicon.ico" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+      integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="/css/style-profile.css" />
+    <title>Update | Quote_Maker</title>
+  </head>
+  <body>
+    <div class="container-flex">
+      <div class="head-container">
+        <head>
+          <p id="title" style="cursor: pointer">
+            <a href="/api/main">QUOTE_MAKER</a>
+          </p>
+          <p id="link">
+            <a href="/api/main">Go Back</a>
+          </p>
+        </head>
+      </div>
+
+      <div class="play-form">
+        <p id="form-title">PROFILE INFORMATION</p>
+
+        <form action="/api/profile" method="POST">
+          <img src="<%= avatar %>" width="50" />
+          <br />
+          <label for="quote">Username:</label>
+          <input
+            type="text"
+            name="username"
+            id="color"
+            value="<%= username %>"
+          /><br />
+
+          <button type="submit" id="save"><p>SAVE CHANGES</p></button>
+        </form>
+      </div>
+
+      <footer>
+        <p>
+          <a href="https://rebrand.ly/codebros" target="_blank"
+            >&copy; A product of Khoi Nguyen</a
+          >
+        </p>
+      </footer>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="/js/script-play.js"></script>
+    <script src="/js/script.js"></script>
+  </body>
+</html>
