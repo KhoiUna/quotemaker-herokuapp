@@ -15,6 +15,7 @@ router.get("/", redirectLogin, (req, res) => {
 
 router.post("/", async (req, res) => {
   const { avatar_url, username } = req.body;
+  req.user.avatar = avatar_url; // change session's avatar
 
   if (
     await updateUser(
@@ -25,7 +26,6 @@ router.post("/", async (req, res) => {
       req.user.user_id
     )
   ) {
-    req.user.avatar = avatar_url; // change session's avatar
     req.user.username = username; // change session's username
     res.redirect("/api/profile");
   } else {
