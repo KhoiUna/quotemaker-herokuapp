@@ -15,18 +15,28 @@ router.get("/", redirectLogin, (req, res) => {
 
 router.post("/", async (req, res) => {
   const { avatar_url, username } = req.body;
-  req.user.avatar = avatar_url; // change session's avatar
-  req.user.username = username; // change session's username
 
-  //Update user
-  if (await updateUser(pool, username, avatar_url, req.user.user_id)) {
+  if (
+    await updateUser(
+      pool,
+      req.user.avatar,
+      username,
+      avatar_url,
+      req.user.user_id
+    )
+  ) {
+    req.user.avatar = avatar_url; // change session's avatar
+    req.user.username = username; // change session's username
     res.redirect("/api/profile");
   } else {
     res.render("profile", {
-      avatar: req.user.avatar || "/img/default_avatar.jpg",
+      avatar:
+        req.user.avatar ||
+        "https://collaborativecbt.com/wp-content/uploads/2016/12/default-avatar.png",
       username: req.user.username.trim(),
       warn: "* Username already used",
     });
   }
 });
+
 module.exports = router;
