@@ -5,7 +5,9 @@ const pool = require("../db/pool");
 
 router.get("/", redirectLogin, (req, res) => {
   res.render("profile", {
-    avatar: req.user.avatar || "/img/default_avatar.jpg",
+    avatar:
+      req.user.avatar ||
+      "https://collaborativecbt.com/wp-content/uploads/2016/12/default-avatar.png",
     username: req.user.username.trim(),
     warn: null,
   });

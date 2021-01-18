@@ -12,7 +12,9 @@ router.get("/", redirectLogin, async (req, res) => {
     username: req.user.username,
     quoteList: quoteList,
     color: null,
-    avatar: req.user.avatar || "/img/default_avatar.jpg",
+    avatar:
+      req.user.avatar ||
+      "https://collaborativecbt.com/wp-content/uploads/2016/12/default-avatar.png",
   });
 });
 
