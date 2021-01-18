@@ -34,30 +34,30 @@
 }
 
 /* Style play-form */
-.play-form {
+.profile-form {
   text-align: center;
 }
-.play-form #form-title {
+.profile-form #form-title {
   font-weight: bold;
   font-size: xx-large;
   padding: 2%;
 }
-.play-form label {
+.profile-form label {
   font-weight: bold;
   padding-top: 5%;
 }
-.play-form input {
+.profile-form input {
   margin: 2%;
   padding: 0.5%;
 }
-.play-form button {
+.profile-form button {
   border: 3px solid black;
   background-color: white;
   cursor: pointer;
   padding: 1%;
   margin: 3%;
 }
-.play-form button p {
+.profile-form button p {
   font-weight: bold;
 }
 

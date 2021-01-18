@@ -26,20 +26,21 @@
         </head>
       </div>
 
-      <div class="play-form">
+      <div class="profile-form">
         <p id="form-title">PROFILE INFORMATION</p>
 
-        <form action="/api/profile" method="POST">
-          <img src="<%= avatar %>" width="50" />
+        <form action="/api/profile" enctype="multipart/form-data" method="POST">
+          <img src="<%= avatar %>" width="50" style="padding-bottom: 2%" />
           <br />
-          <label for="quote">Username:</label>
+          <input type="file" name="file" accept="image/*" />
+          <br />
+          <label for="username">Username:</label>
           <input
             type="text"
             name="username"
             id="color"
             value="<%= username %>"
           /><br />
-
           <button type="submit" id="save"><p>SAVE CHANGES</p></button>
         </form>
       </div>
@@ -54,7 +55,6 @@
     </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="/js/script-play.js"></script>
     <script src="/js/script.js"></script>
   </body>
 </html>
