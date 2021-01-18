@@ -15,11 +15,17 @@ router.get("/", redirectLogin, (req, res) => {
 
 router.post("/", async (req, res) => {
   const { avatar_url, username } = req.body;
-  req.user.avatar = avatar_url; // change session's avatar
+
+  //Only change and upload avatar if the url is different
+  const changeAvatarIfDifferent = req.user.avatar !== avatar_url;
+  if (changeAvatarIfDifferent) {
+    req.user.avatar = avatar_url; // change session's avatar
+  }
 
   if (
     await updateUser(
       pool,
+      changeAvatarIfDifferent,
       req.user.avatar,
       username,
       avatar_url,

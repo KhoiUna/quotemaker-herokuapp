@@ -1,6 +1,6 @@
 module.exports = async (
   pool,
-  currentAvatarPath,
+  changeAvatarIfDifferent,
   username,
   avatarPath,
   user_id
@@ -12,10 +12,12 @@ module.exports = async (
       [username]
     );
     //
-    await client.query("UPDATE users SET avatar = $1 WHERE user_id = $2", [
-      avatarPath,
-      user_id,
-    ]);
+    if (changeAvatarIfDifferent) {
+      await client.query("UPDATE users SET avatar = $1 WHERE user_id = $2", [
+        avatarPath,
+        user_id,
+      ]);
+    }
     if (countUsername.rows[0].count * 1 !== 0) {
       return false;
     } else {
