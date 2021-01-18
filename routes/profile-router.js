@@ -26,7 +26,6 @@ router.post("/", async (req, res) => {
     await updateUser(
       pool,
       changeAvatarIfDifferent,
-      req.user.avatar,
       username,
       avatar_url,
       req.user.user_id
