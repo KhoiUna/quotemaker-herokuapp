@@ -11,6 +11,7 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" href="/css/style-profile.css" />
+    <script src="https://app.simplefileupload.com/buckets/15f438c3484c62b5cd1d081e662e5ae5.js"></script>
     <title>Update | Quote_Maker</title>
   </head>
   <body>
@@ -29,10 +30,14 @@
       <div class="profile-form">
         <p id="form-title">PROFILE INFORMATION</p>
 
-        <form action="/api/profile" enctype="multipart/form-data" method="POST">
-          <img src="<%= avatar %>" width="50" style="padding-bottom: 2%" />
-          <br />
-          <input type="file" name="file" accept="image/*" required />
+        <form action="/api/profile" method="POST">
+          <input
+            type="hidden"
+            name="avatar_url"
+            id="avatar_url"
+            class="simple-file-upload"
+            value="<%= avatar %>"
+          />
           <br />
           <label for="username">Username:</label>
           <input
