@@ -32,7 +32,7 @@
         <form action="/api/profile" enctype="multipart/form-data" method="POST">
           <img src="<%= avatar %>" width="50" style="padding-bottom: 2%" />
           <br />
-          <input type="file" name="file" accept="image/*" />
+          <input type="file" name="file" accept="image/*" required />
           <br />
           <label for="username">Username:</label>
           <input
@@ -41,6 +41,14 @@
             id="color"
             value="<%= username %>"
           /><br />
+
+          <p
+            id="warn-username"
+            style="font-style: italic; font-weight: bold; color: red"
+          >
+            <%= warn %>
+          </p>
+
           <button type="submit" id="save"><p>SAVE CHANGES</p></button>
         </form>
       </div>
