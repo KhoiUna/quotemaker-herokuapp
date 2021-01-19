@@ -3,6 +3,7 @@ const morgan = require("morgan");
 const express = require("express");
 const session = require("express-session");
 const bodyParser = require("body-parser");
+const compression = require("compression");
 const passport = require("passport");
 const app = express();
 const googlePassportSetup = require("./config/google-passport-setup");
@@ -21,6 +22,7 @@ const IN_PROD = NODE_ENV === "production";
 
 //Middleware
 app.use(morgan("dev"));
+app.use(compression());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.set("view engine", "ejs");
 app.set("trust proxy", 1);
