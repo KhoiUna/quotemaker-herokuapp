@@ -1,4 +1,5 @@
 const hashPassword = require("../helpers/hashPassword");
+const sendMail = require("../helpers/sendMail");
 
 const registerUser = async (pool, user, method = "manually") => {
   const client = await pool.connect();
@@ -20,6 +21,9 @@ const registerUser = async (pool, user, method = "manually") => {
           "INSERT INTO users(username, email, log_in_with, password) VALUES($1, $2, $3, $4)",
           [user.username, user.email, method, await hashPassword(user.password)]
         );
+        //Send mail to user
+        sendMail(user.email, user.username);
+
         return {
           usernameInvalid: null,
           notMatch: null,
@@ -30,7 +34,8 @@ const registerUser = async (pool, user, method = "manually") => {
           "INSERT INTO users(username, email, avatar, log_in_with, google_id) VALUES($1, $2, $3, $4, $5)",
           [user.username, user.email, user.avatar, method, user.googleId]
         );
-        console.log("save to db");
+        //Send mail to user
+        sendMail(user.email, user.username);
       }
     }
   } catch (err) {
