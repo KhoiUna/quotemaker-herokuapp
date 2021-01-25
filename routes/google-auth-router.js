@@ -14,6 +14,7 @@ router.get(
   "/google/redirect",
   redirectMain,
   passport.authenticate("google", {
+    successRedirect: "/api/main",
     failureRedirect: "/api/login",
   }),
   redirectMain
