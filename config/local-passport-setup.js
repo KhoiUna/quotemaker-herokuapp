@@ -16,7 +16,11 @@ passport.use(
       //
       try {
         if (await comparePassword(password, user.password)) {
-          return done(null, user);
+          return done(null, {
+            user_id: user.user_id,
+            username: user.username,
+            avatar: user.avatar,
+          });
         } else {
           return done(null, false);
         }
