@@ -17,7 +17,9 @@ router.get(
     successRedirect: "/api/main",
     failureRedirect: "/api/login",
   }),
-  redirectMain
+  (req, res) => {
+    res.redirect("/api/main");
+  }
 );
 
 module.exports = router;
