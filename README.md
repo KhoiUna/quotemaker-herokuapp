@@ -2,7 +2,7 @@
 
 ## Introduction
 
--A RESTful CRUD API for writing quotes and giving them your own color using NodeJS, Express and PostgreSQL.
+-A CRUD app for writing quotes give them your own color using NodeJS Express and PostgreSQL.
 
 -Using [Twilio Sendgrid](https://sendgrid.com/) to send email template after user successfully registering for an account.
 
